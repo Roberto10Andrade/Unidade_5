@@ -1,0 +1,48 @@
+{{#if isAuthenticated}}
+  <div class="container mt-5">
+    <div class="newUser">
+      <a href="/users/add">Novo Usuário</a><br>
+      <a href="/logout">Logout</a>
+    </div>
+    <h1 class="mb-4">Dashboard</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Del</th>
+        </tr>
+      </thead>
+      <tbody id="userTable">
+        <!-- Dados serão inseridos aqui -->
+        {{#each users}}
+
+          <tr>
+            <td>
+              <label for="">{{this.id}}</label>
+            </td>
+            <td>
+              <label for="">{{this.name}}</label>
+            </td>
+            <td>
+              <label for="">{{this.age}}</label>
+            </td>
+            <td>
+              <form action="/users/delete" method="post" submit="return confirm('Are you sure?')">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit" class="btn btn-danger">
+                  Del
+                </button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+
+
+{{/if}}
