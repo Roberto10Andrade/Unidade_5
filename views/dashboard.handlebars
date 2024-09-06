@@ -1,23 +1,23 @@
 {{#if isAuthenticated}}
   <div class="container mt-5">
-    <div class="newUser">
-      <a href="/users/add">Novo Usuário</a><br>
-      <a href="/logout">Logout</a>
-    </div>
-    <h1 class="mb-4">Dashboard</h1>
 
+    <h1 class="mb-4">Dashboard</h1>
     <table class="table table-striped">
       <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Age</th>
-          <th>Del</th>
+          <th>E-mail</th>
+          <th>Phone</th>
+          <th>Edit/Delete</th>
+
         </tr>
+
+
       </thead>
-      <tbody id="userTable">
-        <!-- Dados serão inseridos aqui -->
-        {{#each users}}
+      {{#each users}}
+
+        <tbody id="userTable">
 
           <tr>
             <td>
@@ -27,10 +27,19 @@
               <label for="">{{this.name}}</label>
             </td>
             <td>
-              <label for="">{{this.age}}</label>
+              <label for="">{{this.email}}</label>
             </td>
             <td>
-              <form action="/users/delete" method="post" submit="return confirm('Are you sure?')">
+              <label for="">{{this.phone}}</label>
+            </td>
+            <td style="display: flex;flex-direction: row;">
+              <form action="/users/update/{{this.id}}" method="get" submit="submit">
+                {{!-- <input type="hidden" name="id" value="{{this.id}}"> --}}
+                <button type="submit" class="btn btn-info">
+                  Edit
+                </button>
+              </form>
+              <form action="/users/delete" method="post" submit="submit">
                 <input type="hidden" name="id" value="{{this.id}}">
                 <button type="submit" class="btn btn-danger">
                   Del
@@ -38,11 +47,11 @@
               </form>
             </td>
           </tr>
-        {{/each}}
-      </tbody>
+
+        </tbody>
+
+      {{/each}}
     </table>
+
   </div>
-
-
-
 {{/if}}

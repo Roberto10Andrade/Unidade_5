@@ -1,0 +1,65 @@
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Marca ou logotipo -->
+    <a class="navbar-brand" href="#">MinhaApp</a>
+
+    <!-- Botão para alternar o menu em dispositivos móveis -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Itens do menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          {{!-- <a class="nav-link active" aria-current="page" href="#">Início</a> --}}
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenu" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuário
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserMenu">
+                <li><a class="dropdown-item" href="/users/add">Novo Usuário</a></li>
+                <li><a class="dropdown-item" href="/users/dashboard">Dashboard</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Serviços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+      </ul>
+
+      <!-- Menu de usuário -->
+      {{!-- <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenu" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Usuário
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserMenu">
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Configurações</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </ul>
+        </li>
+      </ul> --}}
+    </div>
+  </div>
+</nav>
