@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize')
 
 
 
-const sequelize = new Sequelize('web2ead2024', 'root', '12345678', {
+const sequelize = new Sequelize('web2ead2024', 'root', '22032019', {
   host: 'localhost',
   dialect: 'mysql',
 })
